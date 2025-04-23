@@ -14,3 +14,18 @@ body {
     color: var(--text);
     -webkit-font-smoothing: antialiased;
 }
+
+/* Updated hero paragraph color */
+.hero p {
+    color: white;
+}
+
+/* Updated mobile nav links color */
+.nav-links a {
+    color: black;
+}
+
+/* Updated token card text color */
+.token-card p {
+    color: black;
+}
