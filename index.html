@@ -164,6 +164,7 @@
                 gap: 8px;
                 width: 100%;
                 margin-bottom: 8px;
+                position: relative;
             }
             .logo {
                 font-size: 1.6rem;
@@ -177,25 +178,22 @@
                 text-align: center;
             }
             .nav-toggle {
-                margin-left: 0;
-                margin-bottom: 8px;
                 display: block;
-                background: var(--dark-bg);
-                border: 2px solid var(--neon-yellow);
+                position: absolute;
+                top: 0;
+                right: 0;
+                margin: 0;
+                background: none;
+                border: none;
                 color: var(--neon-yellow);
-                font-size: 2.4rem;
-                cursor: pointer;
-                margin-left: 12px;
-                border-radius: 8px;
-                padding: 6px 14px;
-                z-index: 1001;
-                transition: background 0.2s, box-shadow 0.2s;
+                font-size: 1.7rem;
+                padding: 4px 8px;
+                box-shadow: none;
             }
             .nav-toggle:active,
             .nav-toggle:focus {
-                background: var(--neon-yellow);
-                color: var(--dark-bg);
-                box-shadow: 0 0 8px var(--neon-yellow);
+                background: none;
+                color: var(--neon-yellow);
                 outline: none;
             }
             .nav-links {
@@ -455,6 +453,7 @@
                 gap: 8px;
                 width: 100%;
                 margin-bottom: 8px;
+                position: relative;
             }
             .logo {
                 font-size: 1.6rem;
@@ -468,25 +467,22 @@
                 text-align: center;
             }
             .nav-toggle {
-                margin-left: 0;
-                margin-bottom: 8px;
                 display: block;
-                background: var(--dark-bg);
-                border: 2px solid var(--neon-yellow);
+                position: absolute;
+                top: 0;
+                right: 0;
+                margin: 0;
+                background: none;
+                border: none;
                 color: var(--neon-yellow);
-                font-size: 2.4rem;
-                cursor: pointer;
-                margin-left: 12px;
-                border-radius: 8px;
-                padding: 6px 14px;
-                z-index: 1001;
-                transition: background 0.2s, box-shadow 0.2s;
+                font-size: 1.7rem;
+                padding: 4px 8px;
+                box-shadow: none;
             }
             .nav-toggle:active,
             .nav-toggle:focus {
-                background: var(--neon-yellow);
-                color: var(--dark-bg);
-                box-shadow: 0 0 8px var(--neon-yellow);
+                background: none;
+                color: var(--neon-yellow);
                 outline: none;
             }
             .nav-links {
@@ -535,6 +531,20 @@
             .token-details { grid-template-columns: 1fr; }
         }
     </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "IAN Finance",
+  "url": "https://ian.finance/",
+  "logo": "https://cryptologos.cc/logos/pancakeswap-cake-logo.png",
+  "sameAs": [
+    "https://twitter.com/dataiantoken",
+    "https://t.me/joinchat/zgyWeoB6cBYxZmRh",
+    "https://github.com/gioliviusa/IAN"
+  ]
+}
+</script>
 </head>
 <body>
     <div class="scanline"></div>
@@ -702,8 +712,18 @@
                 <div style="margin-top: 20px; text-align: center;">
                     <a href="https://pancakeswap.finance/swap?outputCurrency=0x07d5bf841beb877c9bE550B79cb0d49e4e091Dec" 
                        target="_blank" class="btn btn-trade">
-                        <img src="https://cryptologos.cc/logos/pancakeswap-cake-logo.png" class="pancake-logo">
-                        Trade on PancakeSwap
+                        <!-- PancakeSwap SVG icon, crisp and well-aligned -->
+                        <span style="display:inline-block;vertical-align:middle;margin-right:6px;">
+                            <svg width="20" height="20" viewBox="0 0 32 32" fill="none">
+                                <ellipse cx="16" cy="16" rx="16" ry="16" fill="#F3BA2F"/>
+                                <ellipse cx="16" cy="16" rx="13" ry="13" fill="#fff" opacity="0.2"/>
+                                <ellipse cx="11" cy="13" rx="2.5" ry="3" fill="#613B1B"/>
+                                <ellipse cx="21" cy="13" rx="2.5" ry="3" fill="#613B1B"/>
+                                <ellipse cx="16" cy="21" rx="7" ry="4" fill="#F3BA2F"/>
+                                <ellipse cx="16" cy="21" rx="5.5" ry="3" fill="#613B1B"/>
+                            </svg>
+                        </span>
+                        <span style="vertical-align:middle;">Trade on PancakeSwap</span>
                     </a>
                 </div>
             </div>
