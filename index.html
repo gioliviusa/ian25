@@ -88,55 +88,155 @@
             align-items: center;
             gap: 18px;
         }
-        .logo {
-            font-family: var(--retro-font);
-            font-size: 2rem;
-            color: var(--neon-green);
-            text-shadow: 0 0 10px var(--neon-green);
-            letter-spacing: 2px;
+        @media (min-width: 769px) {
+            header {
+                flex-direction: row;
+                align-items: center;
+                gap: 0;
+                padding-bottom: 16px;
+            }
+            .header-main {
+                flex-direction: row;
+                align-items: center;
+                gap: 18px;
+                margin-bottom: 0;
+            }
+            .logo {
+                font-size: 2rem;
+                text-align: left;
+                width: auto;
+            }
+            .network-badge {
+                margin-left: 18px;
+                margin-bottom: 0;
+                width: auto;
+                text-align: left;
+            }
+            .nav-toggle {
+                display: none;
+            }
+            .nav-links {
+                display: flex;
+                gap: 24px;
+                flex-wrap: wrap;
+            }
+            .nav-links a {
+                color: var(--neon-blue);
+                text-decoration: none;
+                font-weight: 700;
+                text-transform: uppercase;
+                font-size: 1rem;
+                letter-spacing: 1px;
+                position: relative;
+                padding: 6px 0;
+                display: flex;
+                align-items: center;
+                gap: 8px;
+            }
+            .nav-links a::after {
+                content: '';
+                position: absolute;
+                bottom: 0; left: 0;
+                width: 0; height: 2px;
+                background: var(--neon-yellow);
+                transition: width 0.3s;
+            }
+            .nav-links a:hover::after { width: 100%; }
+            .nav-links.active {
+                display: flex !important;
+            }
+            .nav-links a {
+                padding: 6px 0;
+                font-size: 1rem;
+                border-bottom: none;
+            }
         }
-        .logo span {
-            color: var(--neon-yellow);
-            text-shadow: 0 0 10px var(--neon-yellow);
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0;
+                padding-bottom: 0;
+            }
+            .header-main {
+                flex-direction: column;
+                align-items: center;
+                gap: 8px;
+                width: 100%;
+                margin-bottom: 8px;
+            }
+            .logo {
+                font-size: 1.6rem;
+                text-align: center;
+                width: 100%;
+            }
+            .network-badge {
+                margin-left: 0;
+                margin-bottom: 8px;
+                width: 100%;
+                text-align: center;
+            }
+            .nav-toggle {
+                margin-left: 0;
+                margin-bottom: 8px;
+                display: block;
+                background: var(--dark-bg);
+                border: 2px solid var(--neon-yellow);
+                color: var(--neon-yellow);
+                font-size: 2.4rem;
+                cursor: pointer;
+                margin-left: 12px;
+                border-radius: 8px;
+                padding: 6px 14px;
+                z-index: 1001;
+                transition: background 0.2s, box-shadow 0.2s;
+            }
+            .nav-toggle:active,
+            .nav-toggle:focus {
+                background: var(--neon-yellow);
+                color: var(--dark-bg);
+                box-shadow: 0 0 8px var(--neon-yellow);
+                outline: none;
+            }
+            .nav-links {
+                flex-direction: column;
+                width: 100vw;
+                max-width: 100vw;
+                display: none;
+                background: var(--dark-bg);
+                border-radius: 0 0 8px 8px;
+                box-shadow: 0 8px 24px var(--neon-blue);
+                margin-top: 0;
+                padding: 0;
+                position: absolute;
+                left: 0;
+                top: 100%;
+                z-index: 1002;
+            }
+            .nav-links.active {
+                display: flex;
+            }
+            .nav-links a {
+                width: 100vw;
+                box-sizing: border-box;
+                padding: 18px 24px;
+                font-size: 1.1rem;
+                border-bottom: 1px solid rgba(5,217,232,0.12);
+                justify-content: flex-start;
+                color: var(--neon-blue) !important;
+                background: none;
+                transition: background 0.2s, color 0.2s;
+            }
+            .nav-links a:active,
+            .nav-links a:focus {
+                background: rgba(5,217,232,0.08);
+                color: var(--neon-yellow) !important;
+                outline: none;
+            }
+            .nav-links a:last-child {
+                border-bottom: none;
+            }
         }
-        .network-badge {
-            background: rgba(240,185,11,0.12);
-            color: var(--neon-yellow);
-            padding: 6px 18px;
-            border-radius: 30px;
-            font-size: 0.9rem;
-            border: 1px solid var(--neon-yellow);
-            font-weight: 700;
-            text-transform: uppercase;
-            margin-left: 18px;
-        }
-        .nav-links {
-            display: flex;
-            gap: 24px;
-            flex-wrap: wrap;
-        }
-        .nav-links a {
-            color: var(--neon-blue);
-            text-decoration: none;
-            font-weight: 700;
-            text-transform: uppercase;
-            font-size: 1rem;
-            letter-spacing: 1px;
-            position: relative;
-            padding: 6px 0;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: 0; left: 0;
-            width: 0; height: 2px;
-            background: var(--neon-yellow);
-            transition: width 0.3s;
-        }
-        .nav-links a:hover::after { width: 100%; }
         .dashboard-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -370,6 +470,24 @@
             .nav-toggle {
                 margin-left: 0;
                 margin-bottom: 8px;
+                display: block;
+                background: var(--dark-bg);
+                border: 2px solid var(--neon-yellow);
+                color: var(--neon-yellow);
+                font-size: 2.4rem;
+                cursor: pointer;
+                margin-left: 12px;
+                border-radius: 8px;
+                padding: 6px 14px;
+                z-index: 1001;
+                transition: background 0.2s, box-shadow 0.2s;
+            }
+            .nav-toggle:active,
+            .nav-toggle:focus {
+                background: var(--neon-yellow);
+                color: var(--dark-bg);
+                box-shadow: 0 0 8px var(--neon-yellow);
+                outline: none;
             }
             .nav-links {
                 flex-direction: column;
@@ -380,7 +498,7 @@
                 border-radius: 0 0 8px 8px;
                 box-shadow: 0 8px 24px var(--neon-blue);
                 margin-top: 0;
-                padding: 18px 0;
+                padding: 0;
                 position: absolute;
                 left: 0;
                 top: 100%;
@@ -390,15 +508,24 @@
                 display: flex;
             }
             .nav-links a {
-                padding: 16px 24px;
+                width: 100vw;
+                box-sizing: border-box;
+                padding: 18px 24px;
                 font-size: 1.1rem;
                 border-bottom: 1px solid rgba(5,217,232,0.12);
+                justify-content: flex-start;
+                color: var(--neon-blue) !important;
+                background: none;
+                transition: background 0.2s, color 0.2s;
+            }
+            .nav-links a:active,
+            .nav-links a:focus {
+                background: rgba(5,217,232,0.08);
+                color: var(--neon-yellow) !important;
+                outline: none;
             }
             .nav-links a:last-child {
                 border-bottom: none;
-            }
-            .nav-toggle {
-                display: block;
             }
         }
         @media (max-width: 480px) {
@@ -421,17 +548,17 @@
                 </button>
             </div>
             <nav class="nav-links" id="navLinks">
-                <a href="#"><i class="fas fa-wallet"></i> Wallet</a>
-                <a href="https://pancakeswap.finance/swap?outputCurrency=0x07d5bf841beb877c9bE550B79cb0d49e4e091Dec" target="_blank">
+                <a href="#" rel="noopener"><i class="fas fa-wallet"></i> Wallet</a>
+                <a href="https://pancakeswap.finance/swap?outputCurrency=0x07d5bf841beb877c9bE550B79cb0d49e4e091Dec" target="_blank" rel="noopener">
                     <i class="fas fa-exchange-alt"></i> Trade
                 </a>
-                <a href="https://coinmarketcap.com/dexscan/bsc/0xe10070eccf5b654a447f5b55fa6839256aa0a73d/" target="_blank">
+                <a href="https://coinmarketcap.com/dexscan/bsc/0xe10070eccf5b654a447f5b55fa6839256aa0a73d/" target="_blank" rel="noopener">
                     <i class="fas fa-chart-line"></i> Chart
                 </a>
-                <a href="https://gioliviusa.github.io/IAN/" target="_blank">
+                <a href="https://gioliviusa.github.io/IAN/" target="_blank" rel="noopener">
                     <i class="fas fa-file-alt"></i> Whitepaper
                 </a>
-                <a href="https://github.com/gioliviusa/ian25" target="_blank">
+                <a href="https://github.com/gioliviusa/ian25" target="_blank" rel="noopener">
                     <i class="fab fa-github"></i> GitHub
                 </a>
             </nav>
