@@ -60,6 +60,12 @@
             padding-bottom: 16px;
             flex-wrap: wrap;
             gap: 16px;
+            position: relative;
+        }
+        .header-main {
+            display: flex;
+            align-items: center;
+            gap: 18px;
         }
         .logo {
             font-family: var(--retro-font);
@@ -289,6 +295,7 @@
             gap: 1rem;
             justify-content: center;
             margin: 18px 0;
+            flex-wrap: wrap;
         }
         .social-links a {
             width: 40px;
@@ -307,21 +314,42 @@
             color: var(--dark-bg);
             transform: translateY(-3px);
         }
-        .nav-toggle {
-            display: none;
-            background: none;
-            border: none;
-            color: var(--neon-yellow);
-            font-size: 2rem;
-            cursor: pointer;
-            margin-left: 12px;
-            z-index: 1001;
+        .resources-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 18px;
         }
         @media (max-width: 768px) {
-            header { flex-direction: column; gap: 18px; position: relative; }
-            .dashboard-grid { grid-template-columns: 1fr; }
-            .logo { font-size: 1.3rem; text-align: center; }
-            .balance { font-size: 2rem; }
+            header {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0;
+                padding-bottom: 0;
+            }
+            .header-main {
+                flex-direction: column;
+                align-items: center;
+                gap: 8px;
+                width: 100%;
+                margin-bottom: 8px;
+            }
+            .logo {
+                font-size: 1.6rem;
+                text-align: center;
+                width: 100%;
+            }
+            .network-badge {
+                margin-left: 0;
+                margin-bottom: 8px;
+                width: 100%;
+                text-align: center;
+            }
+            .nav-toggle {
+                margin-left: 0;
+                margin-bottom: 8px;
+            }
             .nav-links {
                 flex-direction: column;
                 width: 100vw;
@@ -364,12 +392,12 @@
     <div class="scanline"></div>
     <div class="container">
         <header>
-            <div style="display:flex;align-items:center;position:relative;">
+            <div class="header-main">
                 <div class="logo">IAN.<span>FINANCE</span></div>
+                <div class="network-badge">BNB Smart Chain</div>
                 <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
                     <i class="fas fa-bars"></i>
                 </button>
-                <div class="network-badge">BNB Smart Chain</div>
             </div>
             <nav class="nav-links" id="navLinks">
                 <a href="#"><i class="fas fa-wallet"></i> Wallet</a>
@@ -558,10 +586,9 @@
                 <a href="https://www.reddit.com/r/IANtoken/" target="_blank"><i class="fab fa-reddit"></i></a>
                 <a href="https://www.instagram.com/dataiantoken/" target="_blank"><i class="fab fa-instagram"></i></a>
                 <a href="https://github.com/gioliviusa/IAN" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.tiktok.com/@dataiantoken" target="_blank"><i class="fab fa-tiktok"></i></a>
             </div>
-            <div style="margin-top:18px;">
-                <!-- <a href="https://gioliviusa.github.io/webportfolio/" target="_blank" class="btn">Web Portfolio</a> -->
-                <!-- <a href="https://codepen.io/gioliviusa" target="_blank" class="btn">CodePen</a> -->
+            <div class="resources-links">
                 <a href="https://coinmarketcap.com/dexscan/bsc/0xe10070eccf5b654a447f5b55fa6839256aa0a73d/" target="_blank" class="btn">CoinMarketCap</a>
                 <a href="https://dexscreener.com/bsc/0xe10070eccf5b654a447f5b55fa6839256aa0a73d" target="_blank" class="btn">DEXScreener</a>
             </div>
